@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
+            data-dojo-config="async: true"></script>
+</head>
+<body>
+    <div id="contenedor"></div>
+    <script>
+        require(["dojo/dom-construct", "dojo/fx", "dojo/domReady!"], function(domConstruct, fx){
+           var n = domConstruct.create("ul", {innerHTML:"Hola Mundo!"}, "contenedor");
+           fx.slideTo({
+             node: n,
+             top: 100,
+             left: 300
+           }).play();
+        });
+    </script>
+</body>
+</html>
