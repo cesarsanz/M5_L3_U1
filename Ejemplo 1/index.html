@@ -8,16 +8,18 @@
   <body>
     <div id="contenedor"></div>
     <script>
-      require(['dojo/dom', 'dojo/fx', 'dojo/domReady!'], function (dom, fx) {
+      require(['dojo/dom', 'dojo/on','dojo/fx', 'dojo/domReady!'], function (dom, on, fx) {
         var el = dom.byId('contenedor');
         el.innerHTML = 'Hola Mundo!';
         // ...but now, with an animation!
-        fx.slideTo({
+        on(el, "mouseover", function(evt) {
+          fx.slideTo({
             node: el,
             top: 100,
             left: 200
-        }).play();
-      });
+          }).play();
+        });
+      }) 
     </script>
   </body>
 </html>
